@@ -1,0 +1,16 @@
+public class GeometryFactory {
+    public Geometry createGeometry(String type) {
+        if (type.equalsIgnoreCase("triangle")) {
+            return new TriangleGeometry();
+        } else if (type.equalsIgnoreCase("square")) {
+            return new SquareGeometry();
+        } else if (type.equalsIgnoreCase("circle")) {
+            return new CircleGeometry();
+        } else {
+            throw new IllegalArgumentException("Invalid geometry type");
+        }
+    }
+}
+
+GeometryFactory factory = new GeometryFactory();
+TriangleGeometry triangle = (TriangleGeometry) factory.createGeometry("triangle");
